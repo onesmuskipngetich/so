@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meetings | Noretsoret CU E-Team</title>
+
+<style>
+body{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    scroll-behavior: smooth;
+}
+
+header{
+    background:#002147;
+    color:white;
+    padding:15px 0;
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:1000;
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    width:90%;
+    margin:auto;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:20px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+nav ul li a:hover{
+    color:gold;
+}
+
+.menu-btn{
+    display:none;
+    color:white;
+    font-size:24px;
+}
+
+@media(max-width:768px){
+    nav ul{
+        flex-direction:column;
+        background:#002147;
+        display:none;
+        position:absolute;
+        right:20px;
+        top:60px;
+        padding:20px;
+    }
+    nav ul.show{
+        display:block;
+    }
+    .menu-btn{
+        display:block;
+        cursor:pointer;
+    }
+}
+
+section{
+    padding:120px 20px;
+    width:90%;
+    margin:auto;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:40px;
+    color:#002147;
+}
+
+.card-container{
+    display:flex;
+    flex-wrap:wrap;
+    gap:20px;
+    justify-content:center;
+}
+
+.card{
+    background:#f4f4f4;
+    padding:20px;
+    border-radius:10px;
+    width:280px;
+    text-align:center;
+}
+
+footer{
+    background:#002147;
+    color:white;
+    text-align:center;
+    padding:20px;
+}
+
+html{
+    scroll-padding-top:100px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<nav>
+    <img src="images/soret.png" height="50" alt="Noretsoret Logo">
+    <h2>Noretsoret</h2>
+    <span class="menu-btn" onclick="toggleMenu()">☰</span>
+    <ul id="menu">
+        <li><a href="pt3.html">Home</a></li>
+        <li><a href="meetings.html">Weekly Meetings</a></li>
+    </ul>
+</nav>
+</header>
+
+<section id="meetings">
+    <h2 class="section-title">Weekly Meetings</h2>
+    <div class="card-container">
+        <div class="card">
+            <h3>Prayer Fellowship</h3>
+            <p>7:30PM –Online on google meet</p>
+        </div>
+        <div class="card">
+            <h3>Prayer and fasting 
+                every thursday</h3>
+            <p>5:00 -Done by each branch in their respective venues</p>
+        </div>
+        <div class="card">
+            <h3>Sunday Fellowship</h3>
+            <p>2:00 AM –Done by each brach in their respective venues</p>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <p>© 2026 Noretsoret Christian Union E-Team | University of Nairobi</p>
+</footer>
+
+<script>
+function toggleMenu(){
+    document.getElementById("menu").classList.toggle("show");
+}
+</script>
+
+</body>
+</html>

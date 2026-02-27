@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Join Us | Noretsoret Christian Union</title>
+
+<style>
+body{
+    margin:0;
+    font-family: Arial, Helvetica, sans-serif;
+    background:#f4f4f4;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+/* Container */
+.join-container{
+    background:white;
+    padding:40px;
+    width:100%;
+    max-width:450px;
+    border-radius:10px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+    text-align:center;
+}
+
+/* Logo */
+.logo{
+    width:60px;
+    margin-bottom:15px;
+}
+
+/* Heading */
+h1{
+    margin-bottom:10px;
+    color:#002147;
+}
+
+p{
+    margin-bottom:25px;
+    color:#555;
+}
+
+/* Form */
+form{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+input{
+    padding:12px;
+    border-radius:5px;
+    border:1px solid #ccc;
+    font-size:16px;
+}
+
+button{
+    padding:12px;
+    background:#002147;
+    color:white;
+    border:none;
+    border-radius:5px;
+    font-weight:bold;
+    cursor:pointer;
+    font-size:16px;
+}
+
+button:hover{
+    background:gold;
+    color:black;
+}
+
+#welcomeMessage{
+    margin-top:20px;
+    font-weight:bold;
+    color:green;
+    display:none;
+}
+
+/* Back link */
+.back-link{
+    display:inline-block;
+    margin-top:20px;
+    text-decoration:none;
+    color:#002147;
+    font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="join-container">
+    <img src="images/soret.png" alt="Noretsoret Logo" class="logo">
+    
+    <h1>Join Noretsoret CU</h1>
+    <p>Become part of a community growing together in Christ.</p>
+
+    <form id="joinForm" onsubmit="return submitJoinForm()">
+        <input type="text" id="fullName" placeholder="Full Name" required>
+        <input type="email" id="email" placeholder="Email Address" required>
+        <input type="number" id="phone number" placeholder="phone number">
+        <button type="submit">Submit</button>
+    </form>
+
+    <p id="welcomeMessage"></p>
+
+    <a href="pt3.html" class="back-link">← Back to Home</a>
+</div>
+
+<script>
+function submitJoinForm(){
+    const name = document.getElementById("fullName").value;
+
+    document.getElementById("joinForm").style.display = "none";
+
+    const message = `Welcome ${name}! Thank you for joining Noretsoret Christian Union. 🙏`;
+    const msgElem = document.getElementById("welcomeMessage");
+    msgElem.textContent = message;
+    msgElem.style.display = "block";
+
+    return false;
+}
+</script>
+
+</body>
+</html>

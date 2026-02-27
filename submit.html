@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Registration Successful</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:#dfd9d9;
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.container{
+background:white;
+padding:40px;
+border-radius:15px;
+box-shadow:0 4px 20px rgba(0,0,0,0.1);
+text-align:center;
+max-width:500px;
+width:90%;
+}
+
+h1{
+color:#1e3c72;
+font-size:22px;
+line-height:1.5;
+}
+
+button{
+margin-top:30px;
+background:#1e3c72;
+color:white;
+border:none;
+padding:12px 25px;
+border-radius:30px;
+cursor:pointer;
+font-weight:600;
+}
+
+button:hover{
+background:#2a5298;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+<h1 id="welcomeMessage"></h1>
+<button onclick="goBack()">Back to Home</button>
+</div>
+
+<script>
+// Get the name from the URL
+const params = new URLSearchParams(window.location.search);
+const name = params.get("fullName");
+
+// Insert full message including name
+if(name){
+document.getElementById("welcomeMessage").textContent =
+"Welcome " + name + ", your registration has been received successfully.";
+} else {
+document.getElementById("welcomeMessage").textContent =
+"Welcome " + name + ",Your registration has been received successfully.";
+}
+
+function goBack(){
+window.location.href = "hope.html";
+}
+</script>
+
+</body>
+</html>
